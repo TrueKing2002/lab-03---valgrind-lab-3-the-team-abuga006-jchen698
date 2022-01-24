@@ -12,7 +12,9 @@ PersonList::PersonList(){
 }
 
 PersonList::~PersonList(){
+    for(int i = 0; i < numPeople; i++) delete theList[i]; // called each individual destructor
     delete [] theList;
+    //cout << "LIST DELETED!" << endl;
 }
 
 void PersonList::addPerson(const char* child_name, const char* father_name, const char* mother_name){
